@@ -1,3 +1,5 @@
+package task1;
+
 import java.sql.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -5,7 +7,7 @@ import java.util.Scanner;
 public class Main {
 
     private static final String DB_USERNAME = "postgres";
-    private static final String DB_PASSWORD = "";
+    private static final String DB_PASSWORD = "admin";
     private static final String DB_URL = "jdbc:postgresql://localhost:5432/ORIS";
 
     public static void main(String[] args){
@@ -27,6 +29,8 @@ public class Main {
             String sqlInsertUser = "insert into drivers(name, surname, age)" +
                     "values (?,?,?)";
 
+            int totalAffected = 0;
+
             for (int i = 0; i < 6; i++) {
                 scanner.nextLine();
                 System.out.print("Введите имя водителя: ");
@@ -41,8 +45,11 @@ public class Main {
                 preparedStatement.setString(2, secondName);
                 preparedStatement.setInt(3, age);
 
-                preparedStatement.executeUpdate();
+                int affectedRows = preparedStatement.executeUpdate();
+                totalAffected += affectedRows;
             }
+
+            System.out.println("Всего добавлено " + totalAffected + " строк");
 
             ResultSet rs = statement.executeQuery("select * from drivers WHERE age > 25");
             System.out.println("Водители старше 25:");
