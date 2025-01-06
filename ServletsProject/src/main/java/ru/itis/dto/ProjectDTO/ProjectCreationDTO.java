@@ -1,19 +1,14 @@
-package ru.itis.models;
+package ru.itis.dto.ProjectDTO;
 
 import lombok.*;
 
-import java.sql.Timestamp;
-
 @Getter
-@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Project {
+@Data
+public class ProjectCreationDTO {
     private String name;
     private String description;
     private int createdBy;
-    private int id;
-    private Timestamp createdAt;
 }
-

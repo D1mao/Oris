@@ -1,17 +1,15 @@
-package ru.itis.models;
+package ru.itis.dto.UserDTO;
 
 import lombok.*;
 
 @Getter
-@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+@Data
+public class UserDTO {
+    private int id;
     private String username;
     private String email;
-    private String password;
-    private int roleId;
-    private int id;
+    private String role;
 }
-

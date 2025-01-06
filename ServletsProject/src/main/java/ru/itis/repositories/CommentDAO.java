@@ -4,4 +4,5 @@ import ru.itis.models.Comment;
 
 public interface CommentDAO extends CrudDAO<Comment>{
     Comment getCommentById(int id);
+    String getCommentUserName(Comment comment);
 }

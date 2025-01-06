@@ -1,20 +1,18 @@
-package ru.itis.models;
+package ru.itis.dto.CommentDTO;
 
 import lombok.*;
 
 import java.sql.Timestamp;
 
 @Getter
-@Setter
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
-public class Comment {
+@AllArgsConstructor
+@Data
+public class CommentDTO {
     private String content;
-    private int userId;
+    private String userName;
     private int taskId;
-    private Integer fileId;
     private int id;
     private Timestamp createdAt;
 }
-

@@ -1,24 +1,18 @@
-package ru.itis.models;
+package ru.itis.dto.TaskDTO;
 
 import lombok.*;
 
-import java.sql.Timestamp;
 import java.sql.Date;
 
 @Getter
-@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Task {
+@Data
+public class TaskCreationDTO {
     private String title;
     private String description;
     private Date dueDate;
     private int projectId;
     private Integer fileId;
-    private Timestamp createdAt;
-    private int statusId;
-    private int userId;
-    private int id;
 }
-

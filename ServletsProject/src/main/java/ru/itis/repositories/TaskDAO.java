@@ -8,4 +8,6 @@ import java.util.List;
 public interface TaskDAO extends CrudDAO<Task>{
     Task getTaskById(int id);
     List<Comment> getAllTaskComments(int taskId);
+    String getTaskStatusName(Task task);
+    String getTaskAssignedUserName(Task task);
 }
